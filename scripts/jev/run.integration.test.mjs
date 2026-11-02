@@ -26,6 +26,7 @@ if (command === 'snapshot' && mode === 'window_closed' && clicked()) result = er
 else if (command === 'snapshot' && mode === 'closed_top' &&
   require('node:fs').readFileSync(process.env.JEV_TEST_LOG,'utf8').split('\\n').filter(l=>l.includes('"command":"snapshot"')).length >= 3)
   result = error('WINDOW_NOT_FOUND','safe','not_delivered');
+else if (command === 'snapshot' && args.includes('popover')) result = error('ELEMENT_NOT_FOUND','safe','not_delivered');
 else if (command === 'snapshot') {
   const at = args.indexOf('--window-id');
   const actions = require('node:fs').readFileSync(process.env.JEV_TEST_LOG,'utf8').split('\\n').filter(Boolean)
