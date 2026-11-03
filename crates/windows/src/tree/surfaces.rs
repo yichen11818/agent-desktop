@@ -70,7 +70,7 @@ pub(crate) fn surface_root(
                     "No popover owned by this window is open",
                 )
                 .with_suggestion(
-                    "Open the popup first, for example a browser toolbar button, then read                      --surface popover again.",
+                    "Open the popup first, for example a browser toolbar button, then read --surface popover again.",
                 )
             })?;
             root_from_hwnd(popover as isize, deadline)
